@@ -1,0 +1,55 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "gymlerjovanovicmContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "Models",
+   "OutputPath": "Models",
+   "ProjectRootNamespace": "GymlerLibrary",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "public.trainingsplan",
+         "ObjectType": 0
+      },
+      {
+         "Name": "public.uebung",
+         "ObjectType": 0
+      },
+      {
+         "Name": "public.beinhaltet",
+         "ObjectType": 0
+      },
+      {
+         "Name": "public.fuehrt_durch",
+         "ObjectType": 0
+      },
+      {
+         "Name": "public.nutzer_in",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "GymlerConnectino",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}
