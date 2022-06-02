@@ -1,0 +1,78 @@
+﻿<Window x:Class="MiniCasino_MainWindow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniCasino_MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="350"
+        WindowStyle="None"
+        ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+    <Grid>
+        <Grid>
+            <!--Rowdefinitions-->
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!--Backgroundcolor gradiant-->
+            <Border CornerRadius="20" Grid.RowSpan="2" Background="BlueViolet"/>
+
+            <!--Upper stackpanel for Logo and Text -->
+            <StackPanel>
+                <Button x:Name="btnClose" Height="30" Width="30" Margin="0,15,15,0" Content="X"
+                        HorizontalAlignment="Right"
+                        VerticalContentAlignment="Top"
+                        Foreground="AliceBlue"
+                        FontFamily="Helvetica"
+                        FontWeight="DemiBold"
+                        FontSize="25"
+                        Background="Transparent"
+                        BorderBrush="AliceBlue"
+                        BorderThickness="0.5" Click="btnClose_Click">
+                </Button>
+
+                <TextBlock Text="GYMLER"
+                           Foreground="AliceBlue"
+                           TextAlignment="Center"
+                           FontFamily="Rod"
+                           FontSize="40"
+                           FontWeight="DemiBold"
+                           Margin="0,50,0,0">
+                </TextBlock>
+            </StackPanel>
+
+            <!--Lower stackpanel for login field-->
+            <DockPanel Grid.Row="1" Margin="0,0,0,0">
+
+                <!--DataGrid for the users-->
+                <DataGrid x:Name="dgNutzer" Width="270" Height="25"
+                          Foreground="AliceBlue"
+                          Background="Transparent"
+                          Margin="0,15,0,0"
+                          DockPanel.Dock="Top">
+                    
+                    
+                </DataGrid>
+
+                <!--Textblock for Errormessage-->
+                <TextBlock x:Name="tblError" Width="270" Height="25" 
+                       Foreground="AliceBlue" 
+                       Margin="0,0,0,15"
+                       FontFamily="Helvetica"
+                       FontSize="15"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Bottom">
+                </TextBlock>
+
+            </DockPanel>
+
+
+
+        </Grid>
+
+
+
+    </Grid>
+</Window>
