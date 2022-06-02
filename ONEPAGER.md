@@ -14,7 +14,7 @@ Wichtige Routen für dieses Projekt sind:
 - Entfernen von Übungen von Plänen
 - Ändern von Übungsdurchführungen
 
-Das UI besteht aus einem Login Fenster, hat sich der*die Nutzer*in erfolgreich eingeloggt, so wird das Hauptfenster angezeigt. In dem Hauptfenster sind die Traininspläne in einem Datagrid zu sehen, wird auf einen Plan geklickt so erscheinen die Übungen, 
+Das UI besteht aus einem Login Fenster, hat sich der:die Nutzer:in erfolgreich eingeloggt, so wird das Hauptfenster angezeigt. In dem Hauptfenster sind die Traininspläne in einem Datagrid zu sehen, wird auf einen Plan geklickt so erscheinen die Übungen, 
 die dieser Plan beinhält in einem eigenen Datagrid, sonst wird in dem selben Datagrid alle Übungen angezeigt. Über dem Datagrid der Übungen ist eine Textbox, mit der nach bestimmten Übungen gesucht werden kann. Unter dem Datagrid der Pläne sitzen ein Button zum Entfernen
 von Übungen und ein Button zum Hinzufügen von Übungen. Beim Drücken des "Übung entfernen" Buttons wird die ausgewählte Übung entfernt, sollte der "Übung hinzufügen" Button gedrückt werden, so erscheint ein kleines Fenster, in dem die zu hinzufügende Übung ausgewehlt und 
 das Hinzufügen bestätigt wird. Zusätzlich gibt es einen Knopf, mit dem die Statistiken der Nutzer*innen angezeigt werden kann. Schließlich sitzt am unteren Ende des Hauptfensters ein Textblock, auf dem wichtige Meldungen ausgegeben werden. 
