@@ -30,7 +30,7 @@
                         FontSize="25"
                         Background="Transparent"
                         BorderBrush="AliceBlue"
-                        BorderThickness="0.5" Click="btnClose_Click">
+                        BorderThickness="0.5">
                 </Button>
 
                 <TextBlock Text="GYMLER"
@@ -44,17 +44,7 @@
             </StackPanel>
 
             <!--Lower stackpanel for login field-->
-            <DockPanel Grid.Row="1" Margin="0,0,0,0">
-
-                <!--DataGrid for the users-->
-                <DataGrid x:Name="dgNutzer" Width="270" Height="25"
-                          Foreground="AliceBlue"
-                          Background="Transparent"
-                          Margin="0,15,0,0"
-                          DockPanel.Dock="Top">
-                    
-                    
-                </DataGrid>
+            <DockPanel Grid.Row="1">
 
                 <!--Textblock for Errormessage-->
                 <TextBlock x:Name="tblError" Width="270" Height="25" 
@@ -62,9 +52,17 @@
                        Margin="0,0,0,15"
                        FontFamily="Helvetica"
                        FontSize="15"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Bottom">
+                       DockPanel.Dock="Bottom">
                 </TextBlock>
+
+                <!--DataGrid for the users-->
+                <DataGrid x:Name="dgNutzer" Width="270" Height="25"
+                          Foreground="AliceBlue"
+                          Background="Transparent"
+                          Margin="0,0,0,0">
+
+
+                </DataGrid>
 
             </DockPanel>
 
