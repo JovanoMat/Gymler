@@ -9,65 +9,47 @@
         WindowStyle="None"
         ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
     <Grid>
-        <Grid>
-            <!--Rowdefinitions-->
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
 
-            <!--Backgroundcolor gradiant-->
-            <Border CornerRadius="20" Grid.RowSpan="3" Grid.ColumnSpan="4" Background="BlueViolet"/>
+        <!--Backgroundcolor gradiant-->
+        <Border CornerRadius="20" Grid.RowSpan="3" Grid.ColumnSpan="4" Background="BlueViolet">
+            <TextBox TextWrapping="Wrap" Text="Filter Exercises" Margin="368,25,212,400" Height="25" Width="270" Background="Transparent" Foreground="AliceBlue" FontSize="13" BorderBrush="AliceBlue" BorderThickness="2" />
+        </Border>
 
-            <!--Upper stackpanel for Logo and Text -->
-            <StackPanel Grid.Column="3">
-                <Button Grid.Column="3" Grid.Row="0"  x:Name="btnClose" Height="30" Width="30" Margin="0,15,15,0" Content="X"
-                        HorizontalAlignment="Right"
-                        VerticalContentAlignment="Top"
+        <!--Upper stackpanel for Logo and Text -->
+        <Button Grid.Row="0"  x:Name="btnClose" Height="30" Width="30" Margin="810,10,10,410" Content="X"
                         Foreground="AliceBlue"
                         FontFamily="Helvetica"
                         FontWeight="DemiBold"
                         FontSize="25"
                         Background="Transparent"
                         BorderBrush="AliceBlue"
-                        BorderThickness="0.5">
-                </Button>
-            </StackPanel>
-            
-            <!--Lower stackpanel for login field-->
-            <DockPanel Grid.RowSpan="3">
+                        BorderThickness="0.5"/>
 
-                <!--Textblock for Errormessage-->
-                <TextBlock x:Name="tblError" Width="570" Height="25" 
+
+        <!--Textblock for Errormessage-->
+        <TextBlock x:Name="tblError" Height="25" 
                        Foreground="AliceBlue" 
-                       Margin="15,0,0,15"
+                       Margin="10,415,142,10"
                        FontFamily="Helvetica"
                        FontSize="15"
-                       DockPanel.Dock="Bottom">
-                </TextBlock>
-
-                <!--DataGrid for the users-->
-                <DataGrid x:Name="dgNutzer" Width="270" Height="25"
-                          Foreground="AliceBlue"
-                          Background="Transparent"
-                          Margin="0,0,0,0">
+                       DockPanel.Dock="Bottom"/>
 
 
-                </DataGrid>
+        <!--DataGrid for the users-->
+        <DataGrid x:Name="dgPlaene" Width="270"
+                        Foreground="AliceBlue"
+                        Background="Transparent"
+                        Margin="34,60,546,60"/>
+        <DataGrid x:Name="dgUebungen" Width="270"
+            Foreground="AliceBlue"
+            Background="Transparent"
+            Margin="368,61,212,60"/>
+        <Button x:Name="btnUebungEntfernen" Content="Add Exercise" Margin="669,356,46,60" Background="Transparent" BorderBrush="AliceBlue" BorderThickness="2" FontSize="15" Foreground="AliceBlue"/>
+        <Button x:Name="btnUebungHinzufügen" Content="Remove Excercise" Margin="669,301,46,115" Background="Transparent" BorderBrush="AliceBlue" BorderThickness="2" FontSize="15" Foreground="AliceBlue"/>
+        <Button x:Name="btnStatistics" Content="Show Statistics" Margin="669,61,46,355" Background="Transparent" BorderBrush="AliceBlue" BorderThickness="2" FontSize="15" Foreground="AliceBlue"/>
 
-            </DockPanel>
 
-
-
-        </Grid>
 
 
 

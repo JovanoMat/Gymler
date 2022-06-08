@@ -16,8 +16,9 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <!--Backgroundcolor gradiant-->
-            <Border CornerRadius="20" Grid.RowSpan="2" Background="BlueViolet"/>
+            <Border CornerRadius="20" Grid.RowSpan="2" Background="BlueViolet">
+                <Button x:Name="btnLogin" Content="Login" Margin="175,373,40,50" Background="Transparent" BorderBrush="AliceBlue" BorderThickness="2" FontSize="15" Foreground="AliceBlue"/>
+            </Border>
 
             <!--Upper stackpanel for Logo and Text -->
             <StackPanel>
