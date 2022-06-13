@@ -7,11 +7,11 @@ using System.Linq;
 
 namespace GymlerWebAPI.Controllers
 {
+    [Route ("api")]
     [ApiController]
     public class GymlerController : ControllerBase
     {
         public static gymlerjovanovicmContext context = new gymlerjovanovicmContext();
-
 
         [HttpGet("nutzer")]
         public ActionResult<List<NutzerIn>> GetAllNutzer()
@@ -36,22 +36,23 @@ namespace GymlerWebAPI.Controllers
             var uebungen = context.Uebung;
 
             var nutzerByID = nutzerInnen.Where(n => n.Id == uID).FirstOrDefault();
-
-
-            var ubeungenByNutzer = uebungen.SelectMany(u => u.FuehrtDurch).Where(fd => fd.IdNavigation == nutzerByID).ToList();
-
-
             Console.WriteLine($"Getting Uebungen from NutzerIn {nutzerByID.Nutzername}...");
 
             if (nutzerByID == null)
             {
                 return NotFound();
+            
             }
             else
             {
-                return Ok(uebungen);
+                List<Uebung> uebungenByNutzer = nutzerInnen.SelectMany(n => n.FuehrtDurch).Select(f => f.Uebungs).ToList();
+                return Ok(uebungenByNutzer);
 
             }
+
+
+
+
 
 
         }
@@ -62,12 +63,9 @@ namespace GymlerWebAPI.Controllers
         {
             var nutzerInnen = context.NutzerIn;
             var nutzerByID = nutzerInnen.Where(n => n.Id == uID).FirstOrDefault();
-
-
-            var plaeneByNutzer = nutzerByID.Trainingsplan.ToList();
-
-
+            
             Console.WriteLine($"Getting Plaene from NutzerIn {nutzerByID.Nutzername}...");
+
 
             if (nutzerByID == null)
             {
@@ -75,41 +73,49 @@ namespace GymlerWebAPI.Controllers
             }
             else
             {
+                var plaeneByNutzer = nutzerByID.Trainingsplan.ToList();
                 return Ok(plaeneByNutzer);
 
             }
 
 
+
+
+
         }
 
 
-        [HttpPost("pleane/{plan}/nutzer/{nutzer}")]
-        public ActionResult<Trainingsplan> AddPlanToNutzer(Trainingsplan plan, NutzerIn nutzer)
+        [HttpPost("pleane/{plan}/nutzer/{nutzerId}")]
+        public ActionResult<Trainingsplan> AddPlanToNutzer([FromBody] Trainingsplan plan, int nutzerId)
         {
-            if (nutzer == null || plan == null)
+            var nutzerById = context.NutzerIn.Where(n => n.Id == nutzerId).FirstOrDefault();
+
+            if (nutzerById == null || plan == null)
             { 
                 return NotFound();
             }
             else
             {
-                nutzer.Trainingsplan.Add(plan);
+                nutzerById.Trainingsplan.Add(plan);
                 return Ok(plan);
 
             }
 
         }
 
-        [HttpPost("pleane/{plan}/uebung/{uebung}")]
-        public ActionResult<Uebung> AddUebungToPlan(Trainingsplan plan, Uebung uebung)
+        [HttpPost("pleane/{plan}/uebung/{uebungId}")]
+        public ActionResult<Uebung> AddUebungToPlan([FromBody] Trainingsplan plan, int uebungId)
         {
-            if (uebung == null || plan == null)
+            var uebungById = context.Uebung.Where(u => u.UebungsId == uebungId).FirstOrDefault();
+
+            if (uebungById == null || plan == null)
             {
                 return NotFound();
             }
             else
             {
-                plan.Uebungs.Add(uebung);
-                return Ok(uebung);
+                plan.Uebungs.Add(uebungById);
+                return Ok(uebungById);
 
             }
 
@@ -160,7 +166,7 @@ namespace GymlerWebAPI.Controllers
 
 
         [HttpPatch("uebung/{uebung}")]
-        public ActionResult<Uebung> ChangeUebungBeschreibung(Uebung uebung, string beschreibung)
+        public ActionResult<Uebung> ChangeUebungBeschreibung([FromBody] Uebung uebung, string beschreibung)
         {
             uebung.Durchfuehrungsbeschreibung = beschreibung;
 
